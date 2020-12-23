@@ -1,7 +1,7 @@
 console.log("this is linked");
 
-var drinkIngrediant = "rum";
-var foodSearch = "chicken";
+var drinkIngrediant = $("#userDrinkInput");
+var foodSearch = $("#userFoodInput");
 
 var urlQueryDrinks =
   "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + drinkIngrediant;
