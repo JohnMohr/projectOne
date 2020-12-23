@@ -15,6 +15,15 @@ function getFood() {
     method: "GET",
   }).then(function (foodSearchResults) {
     // api text for ing and recipe
+
+    // for (foodSearchResults in meals[0]) {
+    //   if (strIngredient !== null) {
+    //     ingrediantsarr.push(strIngredient);
+    //   }
+    // }
+
+    console.log(ingrediantsarr);
+
     var ingrediantsListOne = foodSearchResults.meals[0].strIngredient1;
     var ingrediantsListTwo = foodSearchResults.meals[0].strIngredient2;
     var ingrediantsListThree = foodSearchResults.meals[0].strIngredient3;
