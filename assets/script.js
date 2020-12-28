@@ -4,10 +4,13 @@ var userDrinkForm = $("#alchiSearch");
 var userFoodForm = $("#foodSearch");
 var userFoodInput = $("#userFoodInput");
 var userDrinkInput = $("#userDrinkInput");
+
 var drinkIngredientarr = [];
 var drinkMeasurementsarr = [];
 var ingrediantsarr = [];
 var measurementsarr = [];
+
+
 
 function getFood() {
   var queryURLFood =
@@ -17,6 +20,7 @@ function getFood() {
     url: queryURLFood,
     method: "GET",
   }).then(function (foodSearchResults) {
+
     console.log(foodSearchResults);
     //  for inloop to pull out the strIngredients and put them on an li and append to ul
 
@@ -57,9 +61,11 @@ function getFood() {
     // empties the arr for a clean new search with no past measurements
     measurementsarr = [];
 
+
     // grabs image and adds it to html
     var img = $("#imageFood");
     img.attr("src", foodSearchResults.meals[0].strMealThumb);
+
   });
 }
 function getalcohol() {
@@ -111,17 +117,13 @@ function getalcohol() {
     console.log(drinkMeasurementsarr);
     drinkMeasurementsarr = [];
 
-    // attaches ing and measure to LI
-
-    // appends LI to UL on html Element
-
     var drinkRecipe = drinkSearchResults.drinks[0].strInstructions;
     $("#drinkRecipe").text("How to make: " + drinkRecipe);
   });
 }
-
 userFoodForm.on("submit", function (event) {
   event.preventDefault();
+
   $("#measurementsList").empty();
   $("#ingrediantsList").empty();
   getFood();
