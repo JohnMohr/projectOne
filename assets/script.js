@@ -4,7 +4,13 @@ var userDrinkForm = $("#alchiSearch");
 var userFoodForm = $("#foodSearch");
 var userFoodInput = $("#userFoodInput");
 var userDrinkInput = $("#userDrinkInput");
+
+var drinkIngredientarr = [];
+var drinkMeasurementsarr = [];
 var ingrediantsarr = [];
+var measurementsarr = [];
+
+
 
 function getFood() {
   var queryURLFood =
@@ -14,40 +20,52 @@ function getFood() {
     url: queryURLFood,
     method: "GET",
   }).then(function (foodSearchResults) {
-    // api text for ing and recipe
 
-    // for (foodSearchResults in meals[0]) {
-    //   if (strIngredient !== null) {
-    //     ingrediantsarr.push(strIngredient);
-    //   }
-    // }
+    console.log(foodSearchResults);
+    //  for inloop to pull out the strIngredients and put them on an li and append to ul
 
-    console.log(ingrediantsarr);
+    for (Ingredient in foodSearchResults.meals[0]) {
+      if (Ingredient.indexOf("strIngredient") !== -1) {
+        ingrediantsarr.push(foodSearchResults.meals[0][Ingredient]);
+        console.log(ingrediantsarr);
+      }
+    }
+    // for loop to cycle through arrar and append li's onto ul
+    for (let i = 0; i < ingrediantsarr.length; i++) {
+      var li = $("<li>");
+      if (ingrediantsarr[i] !== "") {
+        li.text(ingrediantsarr[i]);
+        $("#ingrediantsList").append(li);
+      }
+    }
+    // pulls recipe and attaches to the page
+    $("#recipe").text(
+      "How to make: " + foodSearchResults.meals[0].strInstructions
+    );
+    // empties the arr for a clean new search with no past food
+    ingrediantsarr = [];
+    // for inloop to pull out the strMeasurements and put them on an li and append to ul
+    for (Measurements in foodSearchResults.meals[0]) {
+      if (Measurements.indexOf("strMeasure") !== -1) {
+        measurementsarr.push(foodSearchResults.meals[0][Measurements]);
+      }
+    }
+    // foor loop to cycle through arrar and append li's onto ul
+    for (let i = 0; i < measurementsarr.length; i++) {
+      if (measurementsarr[i] !== "") {
+        var liMeasure = $("<li>");
+        liMeasure.text(measurementsarr[i]);
+        $("#measurementsList").append(liMeasure);
+      }
+    }
+    // empties the arr for a clean new search with no past measurements
+    measurementsarr = [];
 
-    var ingrediantsListOne = foodSearchResults.meals[0].strIngredient1;
-    var ingrediantsListTwo = foodSearchResults.meals[0].strIngredient2;
-    var ingrediantsListThree = foodSearchResults.meals[0].strIngredient3;
-    var MeasureOne = foodSearchResults.meals[0].strMeasure1;
-    var MeasureTwo = foodSearchResults.meals[0].strMeasure2;
-    var MeasureThree = foodSearchResults.meals[0].strMeasure3;
 
     // grabs image and adds it to html
     var img = $("#imageFood");
     img.attr("src", foodSearchResults.meals[0].strMealThumb);
 
-    // grabs ingrediants text and adds the html element
-    var inglistOne = $("<li>");
-    inglistOne.text(ingrediantsListOne + " " + MeasureOne);
-    $("#ingrediantsList").append(inglistOne);
-    var inglistTwo = $("<li>");
-    inglistTwo.text(ingrediantsListTwo + " " + MeasureTwo);
-    $("#ingrediantsList").append(inglistTwo);
-    var inglistThree = $("<li>");
-    inglistThree.text(ingrediantsListThree + " " + MeasureThree);
-    $("#ingrediantsList").append(inglistThree);
-    // grabs recipe and adds to html element
-    var foodRecipe = foodSearchResults.meals[0].strInstructions;
-    $("#recipe").text("How to make: " + foodRecipe);
   });
 }
 function getalcohol() {
@@ -58,52 +76,61 @@ function getalcohol() {
     url: queryURLDrinks,
     method: "GET",
   }).then(function (drinkSearchResults) {
-    // grabs ing and measurement
-    var ingrediantsListOne = drinkSearchResults.drinks[0].strIngredient1;
-    var ingrediantsListTwo = drinkSearchResults.drinks[0].strIngredient2;
-    var ingrediantsListThree = drinkSearchResults.drinks[0].strIngredient3;
-    var ingrediantsListFour = drinkSearchResults.drinks[0].strIngredient4;
-    var ingrediantsListFive = drinkSearchResults.drinks[0].strIngredient5;
-    var MeasureOne = drinkSearchResults.drinks[0].strMeasure1;
-    var MeasureTwo = drinkSearchResults.drinks[0].strMeasure2;
-    var MeasureThree = drinkSearchResults.drinks[0].strMeasure3;
-    var Measurefour = drinkSearchResults.drinks[0].strMeasure4;
+    console.log(drinkSearchResults);
+    //  for inloop to pull out the strIngredients and put them on an li and append to ul
+    for (drink in drinkSearchResults.drinks[0]) {
+      if (drink.indexOf("strIngredient") !== -1) {
+        drinkIngredientarr.push(drinkSearchResults.drinks[0][drink]);
+      }
+    }
+    // foor loop to cycle through arrar and append li's onto ul
+    for (let i = 0; i < drinkIngredientarr.length; i++) {
+      if (drinkIngredientarr[i] !== null) {
+        var li = $("<li>");
+        li.text(drinkIngredientarr[i]);
+        $("#ingrediantsDrink").append(li);
+      }
+    }
+    console.log(drinkIngredientarr);
+    // empties the arr for a clean new search with no past ingredients
+    drinkIngredientarr = [];
 
     // grabs image and adds it to html
     var img = $("#imageDrink");
     img.attr("src", drinkSearchResults.drinks[0].strDrinkThumb);
 
     // creates list item
-    var inglistOne = $("<li>");
-    var inglistTwo = $("<li>");
-    var inglistThree = $("<li>");
-    var inglistFour = $("<li>");
-    var inglistFive = $("<li>");
-    // attaches ing and measure to LI
-    inglistOne.text(ingrediantsListOne + " " + MeasureOne);
-    inglistTwo.text(ingrediantsListTwo + " " + MeasureTwo);
-    inglistThree.text(ingrediantsListThree + " " + MeasureThree);
-    inglistFour.text(ingrediantsListFour + " " + Measurefour);
-    inglistFive.text(ingrediantsListFive);
-    // appends LI to UL on html Element
-    $("#ingrediantsDrink").append(inglistOne);
-    $("#ingrediantsDrink").append(inglistTwo);
-    $("#ingrediantsDrink").append(inglistThree);
-    $("#ingrediantsDrink").append(inglistFour);
-    $("#ingrediantsDrink").append(inglistFive);
+
+    for (drinkMeasures in drinkSearchResults.drinks[0]) {
+      if (drinkMeasures.indexOf("strMeasure") !== -1) {
+        drinkMeasurementsarr.push(drinkSearchResults.drinks[0][drinkMeasures]);
+      }
+    }
+    // foor loop to cycle through arrar and append li's onto ul
+    for (let i = 0; i < drinkMeasurementsarr.length; i++) {
+      if (drinkMeasurementsarr[i] !== null) {
+        var liMeasures = $("<li>");
+        liMeasures.text(drinkMeasurementsarr[i]);
+        $("#measurementsDrink").append(liMeasures);
+      }
+    }
+    console.log(drinkMeasurementsarr);
+    drinkMeasurementsarr = [];
 
     var drinkRecipe = drinkSearchResults.drinks[0].strInstructions;
     $("#drinkRecipe").text("How to make: " + drinkRecipe);
   });
 }
-
 userFoodForm.on("submit", function (event) {
   event.preventDefault();
+
+  $("#measurementsList").empty();
   $("#ingrediantsList").empty();
   getFood();
 });
 userDrinkForm.on("submit", function (event) {
   event.preventDefault();
   $("#ingrediantsDrink").empty();
+  $("#measurementsDrink").empty();
   getalcohol();
 });
