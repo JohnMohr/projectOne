@@ -1,4 +1,5 @@
 console.log("this is linked");
+M.AutoInit();
 
 var userDrinkForm = $("#alchiSearch");
 var userFoodForm = $("#foodSearch");
@@ -134,3 +135,17 @@ userDrinkForm.on("submit", function (event) {
   $("#measurementsDrink").empty();
   getalcohol();
 });
+
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   var elems = document.querySelectorAll('.carousel');
+//   var instances = M.Carousel.init(elems, options);
+// });
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   var elems = document.querySelectorAll('.sidenav');
+//   var instances = M.Sidenav.init(elems, options);
+// });
+// document.addEventListener('DOMContentLoaded', function() {
+//   var elems = document.querySelectorAll('.sidenav');
+//   var instances = M.Sidenav.init(elems, options);

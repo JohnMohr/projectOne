@@ -5,20 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/style/style.css">
 </head>
+
 
 <body>
     <!-- navbar from materilaize will go in class navBar -->
-    <div class="navBar"></div>
+    <nav>
+        <div class="nav-wrapper light-green lighten-1">
+          <a href="#" id="logo"class="brand-logo right">ZestyMeals</a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">My Zestipes</a></li>
+            <li><a href="#">Zest Me!</a></li>
+          </ul>
+        </div>
+      </nav>
 
-
+    <!-- sidebar from materialize -->
+    <!-- <ul id="slide-out" class="sidenav">
+        <li><div class="user-view">
+          <div class="background">
+            <img src="images/office.jpg">
+          </div>
+          <a href="#user"><img class="circle" src="images/yuna.jpg"></a>
+          <a href="#name"><span class="white-text name">John Doe</span></a>
+          <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+        </div></li>
+        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+        <li><a href="#!">Second Link</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">Subheader</a></li>
+        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+      </ul>
+      <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a> -->
     <!-- container will house both searches and intro carousel -->
-    <div class="container"></div>
+    <div class="container">
+        <div class="intro">
+            <div class="carousel carousel-slider">
+                <a class="carousel-item" href="#one!"><img src="https://www.fillmurray.com/800/400"></a>
+                <a class="carousel-item" href="#two!"><img src="https://www.fillmurray.com/600/400"></a>
+                <a class="carousel-item" href="#three!"><img src=" https://www.fillmurray.com/400/400"></a>
+                <a class="carousel-item" href="#four!"><img src=" https://www.fillmurray.com/800/800"></a>
+            </div>
+        </div>
+        <div class= row></div>
 
-    <!-- intro carousel goes here -->
-    <div class="intro"></div>
+        <form id="foodSearch">
+            <input type="text" placeholder="Zesty Foods"id="userFoodInput">
+            <div class="card-panel hoverable" id="foodCard">
+                <ul id="ingrediantsList"class="left-align"></ul>
+                <img class ="materialboxed right-align" id="imageFood" src="" alt="" height="200px" width="200px">
+                <p id="recipe"> </p>
+            </div>
+    
+        </form>
 
 
+<<<<<<< HEAD
+    
+=======
     <!-- food search/img/instructions -->
     <form id="foodSearch">
         <input type="text" id="userFoodInput">
@@ -30,35 +77,80 @@
             <img id="imageFood" src="" alt="" height="200px" width="200px">
             <p id="recipe"> </p>
         </div>
+>>>>>>> development
 
-    </form>
-    <!-- alcohol search/img/instructions -->
     <form id="alchiSearch">
-        <input type="text" id="userDrinkInput">
-        <div id="alchiCard">
+        <input type="text" placeholder="Zesty Drinks"id="userDrinkInput">
+        <div class="card-panel hoverable"id="alchiCard">
             <ul id="ingrediantsDrink"></ul>
+<<<<<<< HEAD
+            <img class ="materialboxed right-align"id="imageDrink" src="" alt="" height="200px" width="200px">
+=======
 
             <ul id="measurementsDrink"></ul>
 
 
             <img id="imageDrink" src="" alt="" height="200px" width="200px">
+>>>>>>> development
             <p id="drinkRecipe"></p>
         </div>
 
     </form>
 
+    </div>
+    <!-- intro carousel goes here -->
+    
+
+
+    <!-- food search/img/instructions -->
+   
+    <!-- alcohol search/img/instructions -->
+   
+
     <!-- zestimonials carouesel -->
-    <div class="zestimonials"></div>
+    <div class="zestimonials">
+        <div class="carousel carousel-slider">
+            <a class="carousel-item" href="#one!"><img src="http://placekitten.com/200/300"></a>
+            <a class="carousel-item" href="#two!"><img src="http://placekitten.com/200/300"></a>
+            <a class="carousel-item" href="#three!"><img src="http://placekitten.com/200/300"></a>
+            <a class="carousel-item" href="#four!"><img src="http://placekitten.com/200/300>"></a>
+          </div>
+    </div>
 
-    <footer></footer>
+    <footer class="page-footer light-green lighten-2">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">ZestyMeals</h5>
+              <p class="grey-text text-lighten-4">Zesty for Successy</p>
+            </div>
+            <!-- <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Links</h5>
+              <ul>
+                 <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+              </ul>
+            </div> -->
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+          © 2020 is a simulation
+          <a class="grey-text text-lighten-4 right" href="https://en.wikipedia.org/wiki/Simulation_hypothesis">Simulation Theory</a>
+          </div>
+        </div>
+      </footer>
 
 
-
-
+     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
         crossorigin="anonymous"></script>
-    <script src="./assets/script.js"></script>
+    <script src="assets/script.js"></script>
+    
 </body>
 
 </html>
