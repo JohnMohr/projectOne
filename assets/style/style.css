@@ -1,16 +1,19 @@
 body{
     background:#fff8e1;
-}
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 
+}
+footer {
+    flex: 1 0 auto;
+  }
 #logo{
     color:#ef6c00;
 }
-
 #foodCard{
     background: #ffd180;
 }
-
-
 #alchiCard{
     background: #ffd180;
 }
