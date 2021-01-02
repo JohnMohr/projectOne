@@ -11,8 +11,6 @@ var drinkMeasurementsarr = [];
 var ingrediantsarr = [];
 var measurementsarr = [];
 
-
-
 function getFood() {
   var queryURLFood =
     "https://www.themealdb.com/api/json/v1/1/search.php?s=" +
@@ -21,7 +19,6 @@ function getFood() {
     url: queryURLFood,
     method: "GET",
   }).then(function (foodSearchResults) {
-
     console.log(foodSearchResults);
     //  for inloop to pull out the strIngredients and put them on an li and append to ul
 
@@ -62,11 +59,9 @@ function getFood() {
     // empties the arr for a clean new search with no past measurements
     measurementsarr = [];
 
-
     // grabs image and adds it to html
     var img = $("#imageFood");
     img.attr("src", foodSearchResults.meals[0].strMealThumb);
-
   });
 }
 function getalcohol() {
@@ -135,7 +130,6 @@ userDrinkForm.on("submit", function (event) {
   $("#measurementsDrink").empty();
   getalcohol();
 });
-
 
 // document.addEventListener('DOMContentLoaded', function() {
 //   var elems = document.querySelectorAll('.carousel');
