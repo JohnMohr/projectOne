@@ -1,12 +1,8 @@
-body{
+/* body{
     background:#fff8e1;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-<<<<<<< HEAD
-
-=======
->>>>>>> development
 }
 footer {
     flex: 1 0 auto;
@@ -20,4 +16,37 @@ footer {
 #alchiCard{
     background: #ffd180;
 }
+ */
 
+body{
+    
+    background:#fff8e1;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+nav{
+}
+.intro{
+padding:20px;
+}
+footer {
+    flex: 1 0 auto;
+  }
+#card-small{
+    background: #ffd180;
+  }
+#logo{
+    color:#ef6c00;
+}
+#foodCard{
+    background: #ffd180;
+}
+#alchiCard{
+    background: #ffd180;
+}
+
+.carousel {
+    width: 1280px;
+    height: 256px;
+  }
