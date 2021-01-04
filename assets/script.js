@@ -33,11 +33,15 @@ function zestmeBTNDrink() {
         $("#ingrediantsDrink").append(li);
       }
     }
-
+    console.log(randoDrinkSearch);
     // pulls recipe and attaches to the page
     $("#drinkRecipe").text(
       "How to make: " + randoDrinkSearch.drinks[0].strInstructions
     );
+    // adds drink name to container
+
+    $("#drinkTitle").text(randoDrinkSearch.drinks[0].strDrink);
+
     // empties the arr for a clean new search with no past food
     ingrediantsarr = [];
     // for inloop to pull out the strMeasurements and put them on an li and append to ul
@@ -87,6 +91,9 @@ function zestmeBTNFood() {
         $("#ingrediantsList").append(li);
       }
     }
+    // adds food name to container
+
+    $("#foodTitle").text(randoFoodSearch.meals[0].strMeal);
 
     // pulls recipe and attaches to the page
     $("#recipe").text(
@@ -143,6 +150,9 @@ function getFood() {
         $("#ingrediantsList").append(li);
       }
     }
+    // adds food name to container
+
+    $("#foodTitle").text(foodSearchResults.meals[0].strMeal);
     // pulls recipe and attaches to the page
     $("#recipe").text(
       "How to make: " + foodSearchResults.meals[0].strInstructions
@@ -195,6 +205,9 @@ function getalcohol() {
         $("#ingrediantsDrink").append(li);
       }
     }
+    // adds drink name to container
+    $("#drinkTitle").text(drinkSearchResults.drinks[0].strDrink);
+
     console.log(drinkIngredientarr);
     // empties the arr for a clean new search with no past ingredients
     drinkIngredientarr = [];
@@ -202,8 +215,6 @@ function getalcohol() {
     // grabs image and adds it to html
     var img = $("#imageDrink");
     img.attr("src", drinkSearchResults.drinks[0].strDrinkThumb);
-
-    // creates list item
 
     for (drinkMeasures in drinkSearchResults.drinks[0]) {
       if (drinkMeasures.indexOf("strMeasure") !== -1) {
@@ -221,7 +232,7 @@ function getalcohol() {
     // empties the arr for a clean new search with no past measurements
     console.log(drinkMeasurementsarr);
     drinkMeasurementsarr = [];
-
+    // adds drink recipe
     var drinkRecipe = drinkSearchResults.drinks[0].strInstructions;
     $("#drinkRecipe").text("How to make: " + drinkRecipe);
   });
@@ -254,16 +265,3 @@ zestME.on("click", function () {
 // allows for recipes to appear on page load
 zestmeBTNFood();
 zestmeBTNDrink();
-
-// document.addEventListener('DOMContentLoaded', function() {
-//   var elems = document.querySelectorAll('.carousel');
-//   var instances = M.Carousel.init(elems, options);
-// });
-
-// document.addEventListener('DOMContentLoaded', function() {
-//   var elems = document.querySelectorAll('.sidenav');
-//   var instances = M.Sidenav.init(elems, options);
-// });
-// document.addEventListener('DOMContentLoaded', function() {
-//   var elems = document.querySelectorAll('.sidenav');
-//   var instances = M.Sidenav.init(elems, options);
