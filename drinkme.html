@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>drink up that Zest</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="assets/style/style.css">
 </head>
@@ -20,25 +20,33 @@
       </ul>
     </div>
   </nav>
-  <div class="container" id="favRecipeSearch">
-    <form id="foodSearch">
-      <!-- <input type="text" placeholder="Search My Zestpies"id="userFoodInput"> -->
-      <div class="card-panel hoverable" id="foodCard">
-        <div class="row">
-          <div class="col s1"></div>
-          <h3 id="foodTitle"></h3>
-          <div class="col s4">
-            <ul id="measurementsList" class="left-align"></ul>
-            <ul id="ingrediantsList" class="left-align"></ul>
-          </div>
-          <div class="col s6">
-            <img class="materialboxed right-align" id="imageFood" src="" alt="" height="200px" width="200px">
-          </div>
-          <div class="col s1"></div>
+  <form id="alchiSearch">
+    <input type="text" placeholder="Search for Zesty Drinks" id="userDrinkInput">
+    <div class="card-panel hoverable" id="alchiCard">
+      <div class="row">
+        <div class="col s1">
+          <h3 id="drinkTitle"></h3>
+
         </div>
-        <p id="recipe"> </p>
+        <div class="col s6">
+          <img class="materialboxed right-align" id="imageDrink" src="" alt="" height="300px" width="300px">
+        </div>
+        <div class="col s4">
+          <ul id="measurementsDrink"></ul>
+          <ul id="ingrediantsDrink"></ul>
+        </div>
+        <div class="col s1">
+
+        </div>
       </div>
-    </form>
+      <p id="drinkRecipe"></p>
+    </div>
+  </form>
+  </div>
+  <div class="col s2">
+  </div>
+  </div>
+
   </div>
   <footer class="page-footer light-green lighten-2">
     <div class="container">
