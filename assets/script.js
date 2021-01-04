@@ -11,6 +11,8 @@ var drinkIngredientarr = [];
 var drinkMeasurementsarr = [];
 var ingrediantsarr = [];
 var measurementsarr = [];
+var userSavedFood = [];
+var userSavedDrink = [];
 
 function zestmeBTNDrink() {
   var queryURLRandoDrink =
