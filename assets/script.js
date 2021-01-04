@@ -243,6 +243,7 @@ userDrinkForm.on("submit", function (event) {
 });
 // runs random on zest me click
 zestME.on("click", function () {
+  preventDefault();
   $("#measurementsList").empty();
   $("#ingrediantsList").empty();
   $("#ingrediantsDrink").empty();
