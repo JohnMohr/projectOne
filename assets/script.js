@@ -6,6 +6,7 @@ var userFoodForm = $("#foodSearch");
 var userFoodInput = $("#userFoodInput");
 var userDrinkInput = $("#userDrinkInput");
 var zestME = $("#zestME");
+var foodFave = JSON.parse(localStorage.getItem("foodFave")) || [];
 
 var drinkIngredientarr = [];
 var drinkMeasurementsarr = [];
@@ -267,3 +268,8 @@ zestME.on("click", function () {
 // allows for recipes to appear on page load
 zestmeBTNFood();
 zestmeBTNDrink();
+
+//  allows to save to local storage when clicked
+document.on("click", "#likeButtonFood", function () {
+  localStorage.setItem("faveFood", JSON.stringify(userSavedFood));
+});
