@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just zest a little no one is watching</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/style/style.css">
+</head>
+
+
+<body>
+    <!-- navbar from materilaize will go in class navBar -->
+    <nav>
+        <div class="nav-wrapper light-green lighten-1">
+            <a href="#" id="logo" class="brand-logo right">ZestyMeals</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="zestipes.html">My Zestipes</a></li>
+                <li id="zestMe"><a href="">Zest Me!</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- container will house both searches and intro carousel -->
+
+    <div class="container" id="introBox">
+        <!-- intro carousel goes here -->
+        <div class="intro">
+            <div class="carousel carousel-slider" id="topSlider">
+                <a class="carousel-item" href="#one!"><img src="https://www.fillmurray.com/800/400"></a>
+                <a class="carousel-item" href="#two!"><img src="https://www.fillmurray.com/600/400"></a>
+                <a class="carousel-item" href="#three!"><img src=" https://www.fillmurray.com/400/400"></a>
+                <a class="carousel-item" href="#four!"><img src=" https://www.fillmurray.com/800/800"></a>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="searches">
+        <div class="row">
+            <div class="col s10">
+                <!-- food search/img/instructions -->
+                <form id="foodSearch">
+                    <input type="text" placeholder="Search for Zesty Foods" id="userFoodInput">
+                    <div class="card-panel hoverable" id="foodCard">
+                        <div class="row">
+                            <div class="col s1">
+                                <h3 id="foodTitle"></h3>
+
+
+                            </div>
+                            <div class="col s6">
+                                <ul id="measurementsList" class="left-align"></ul>
+                                <ul id="ingrediantsList" class="left-align"></ul>
+                            </div>
+                            <div class="col s4">
+                                <img class="materialboxed right-align" id="imageFood" src="" alt="" height="300px"
+                                    width="300px">
+                            </div>
+                            <div class="col s1">
+
+                            </div>
+                        </div>
+                        <p id="recipe"> </p>
+                    </div>
+                </form>
+                <!-- alcohol search/img/instructions -->
+                <form id="alchiSearch">
+                    <input type="text" placeholder="Search for Zesty Drinks" id="userDrinkInput">
+                    <div class="card-panel hoverable" id="alchiCard">
+                        <div class="row">
+                            <div class="col s1">
+                                <h3 id="drinkTitle"></h3>
+
+                            </div>
+                            <div class="col s6">
+                                <img class="materialboxed right-align" id="imageDrink" src="" alt="" height="300px"
+                                    width="300px">
+                            </div>
+                            <div class="col s4">
+                                <ul id="measurementsDrink"></ul>
+                                <ul id="ingrediantsDrink"></ul>
+                            </div>
+                            <div class="col s1">
+
+                            </div>
+                        </div>
+                        <p id="drinkRecipe"></p>
+                    </div>
+                </form>
+            </div>
+            <div class="col s2">
+                <div class="adSpace">
+                    <img src="assets/images/advertasideplaceholder.jpg">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- zestimonials carousel -->
+    <div class="container" id="zestyReviews">
+        <div class="row">
+            <div class="col s12">
+                <div class="carousel carousel-slider" id="zestimonialSlider">
+                    <a class="carousel-item" href="#one!"><img src="http://placekitten.com/200/300"></a>
+                    <a class="carousel-item" href="#two!"><img src="http://placekitten.com/200/300"></a>
+                    <a class="carousel-item" href="#three!"><img src="http://placekitten.com/200/300"></a>
+                    <a class="carousel-item" href="#four!"><img src="http://placekitten.com/200/300>"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer light-green lighten-2">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">ZestyMeals</h5>
+                    <p class="grey-text text-lighten-4">Zesty for Successy</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="index.html">Home</a></li>
+                        <li><a class="grey-text text-lighten-3" href="zestimonials.html">Zestimonials</a></li>
+                        <li><a class="grey-text text-lighten-3" href="zestme.html">Zest Me!</a></li>
+                        <li><a class="grey-text text-lighten-3" href="taco.html">Z E S T A C O</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container" id="">
+                © 2020Won is a simulation
+                <a class="grey-text text-lighten-4 right"
+                    href="https://en.wikipedia.org/wiki/Simulation_hypothesis">Simulation Theory</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+    <script src="assets/script.js"></script>
+
+</body>
+
+</html>
