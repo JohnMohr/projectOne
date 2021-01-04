@@ -1,0 +1,14 @@
+body{
+    background: #ff8a80;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+nav{
+}
+footer{
+    flex: 1 0 auto;
+  }
+#logo{
+    color:#ef6c00;
+}

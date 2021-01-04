@@ -3,13 +3,17 @@ body{
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-<<<<<<< HEAD
-
-=======
->>>>>>> development
+}
+nav{
+}
+.intro{
+padding:20px;
 }
 footer {
     flex: 1 0 auto;
+  }
+#card-small{
+    background: #ffd180;
   }
 #logo{
     color:#ef6c00;
@@ -21,3 +25,7 @@ footer {
     background: #ffd180;
 }
 
+.carousel {
+    width: 1280px;
+    height: 256px;
+  }
