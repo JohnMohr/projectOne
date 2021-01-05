@@ -7,13 +7,15 @@ var userFoodInput = $("#userFoodInput");
 var userDrinkInput = $("#userDrinkInput");
 var zestME = $("#zestME");
 var foodFave = JSON.parse(localStorage.getItem("foodFave")) || [];
+var drinkFave = JSON.parse(localStorage.getItem("drinkFave")) || [];
+
+console.log(foodFave);
+console.log(drinkFave);
 
 var drinkIngredientarr = [];
 var drinkMeasurementsarr = [];
 var ingrediantsarr = [];
 var measurementsarr = [];
-var userSavedFood = [];
-var userSavedDrink = [];
 
 function zestmeBTNDrink() {
   var queryURLRandoDrink =
@@ -25,7 +27,6 @@ function zestmeBTNDrink() {
     for (randoIngredient in randoDrinkSearch.drinks[0]) {
       if (randoIngredient.indexOf("strIngredient") !== -1) {
         ingrediantsarr.push(randoDrinkSearch.drinks[0][randoIngredient]);
-        console.log(ingrediantsarr);
       }
     }
     // for loop to cycle through arrar and append li's onto ul
@@ -83,7 +84,6 @@ function zestmeBTNFood() {
     for (randoIngredient in randoFoodSearch.meals[0]) {
       if (randoIngredient.indexOf("strIngredient") !== -1) {
         ingrediantsarr.push(randoFoodSearch.meals[0][randoIngredient]);
-        console.log(ingrediantsarr);
       }
     }
     // for loop to cycle through arrar and append li's onto ul
@@ -142,7 +142,6 @@ function getFood() {
     for (Ingredient in foodSearchResults.meals[0]) {
       if (Ingredient.indexOf("strIngredient") !== -1) {
         ingrediantsarr.push(foodSearchResults.meals[0][Ingredient]);
-        console.log(ingrediantsarr);
       }
     }
     // for loop to cycle through arrar and append li's onto ul
@@ -211,7 +210,6 @@ function getalcohol() {
     // adds drink name to container
     $("#drinkTitle").text(drinkSearchResults.drinks[0].strDrink);
 
-    console.log(drinkIngredientarr);
     // empties the arr for a clean new search with no past ingredients
     drinkIngredientarr = [];
 
@@ -233,13 +231,50 @@ function getalcohol() {
       }
     }
     // empties the arr for a clean new search with no past measurements
-    console.log(drinkMeasurementsarr);
     drinkMeasurementsarr = [];
     // adds drink recipe
     var drinkRecipe = drinkSearchResults.drinks[0].strInstructions;
     $("#drinkRecipe").text("How to make: " + drinkRecipe);
   });
 }
+// creates cards for zestipies page
+function createcards() {
+  for (let i = 0; i < foodFave.length; i++) {
+    var loop = foodFave[i];
+    var card = $("<card>");
+    var cardimg = $("<img>");
+    var header = $("<h5>");
+
+    cardimg.attr("height", "200px");
+    cardimg.attr("width", "200px");
+    header.text(loop.title);
+    cardimg.attr("src", loop.img);
+
+    card.prepend(cardimg);
+    card.append(header);
+
+    $("#food").append(card);
+  }
+}
+function createcardsdrink() {
+  for (let i = 0; i < drinkFave.length; i++) {
+    var drinkloop = drinkFave[i];
+    var cardDrink = $("<card>");
+    var cardimgDrink = $("<img>");
+    var headerDrink = $("<h5>");
+
+    cardimgDrink.attr("height", "200px");
+    cardimgDrink.attr("width", "200px");
+    headerDrink.text(drinkloop.drink);
+    cardimgDrink.attr("src", drinkloop.drinkimg);
+
+    cardDrink.prepend(cardimgDrink);
+    cardDrink.append(headerDrink);
+
+    $("#drink").append(cardDrink);
+  }
+}
+
 // this takes the users search term and triggers the search on a submit (food)
 userFoodForm.on("submit", function (event) {
   event.preventDefault();
@@ -270,6 +305,26 @@ zestmeBTNFood();
 zestmeBTNDrink();
 
 //  allows to save to local storage when clicked
-document.on("click", "#likeButtonFood", function () {
-  localStorage.setItem("faveFood", JSON.stringify(userSavedFood));
+$(document).on("click", "#likeButtonFood", function () {
+  var cardObj = {
+    title: $("#foodTitle").text(),
+    img: $("#imageFood").attr("src"),
+  };
+  foodFave.push(cardObj);
+  console.log(foodFave);
+  localStorage.setItem("foodFave", JSON.stringify(foodFave));
 });
+
+//  allows to save to local storage when clicked
+$(document).on("click", "#likeButtonDrink", function () {
+  console.log("I HATH BEEN CLICKED");
+  var cardDrinkObj = {
+    drink: $("#drinkTitle").text(),
+    drinkimg: $("#imageDrink").attr("src"),
+  };
+  drinkFave.push(cardDrinkObj);
+  localStorage.setItem("drinkFave", JSON.stringify(drinkFave));
+});
+
+createcards();
+createcardsdrink();

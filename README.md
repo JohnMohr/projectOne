@@ -6,7 +6,7 @@
 
 This is an web application that gives you recipes based on what you search for. On top of food recipes there are drink recipes as well with instuctions, ingredients and measurements.
 
-## [Click Me]() to see the deployed website
+## [Click Me](https://johnmohr.github.io/projectOne/) to see the deployed website
 
 ## Features:
 
