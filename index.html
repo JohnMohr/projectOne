@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Just zest a little no one is watching</title>
+    <title>Zest like no one is watching</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="assets/style/style.css">
 </head>
 
 
 <body>
-    <!-- navbar from materilaize will go in class navBar -->
+    <!-- Materialize Navbar -->
     <nav>
         <div class="nav-wrapper light-green lighten-1">
             <a href="#" id="logo" class="brand-logo right">ZestyMeals</a>
@@ -23,17 +23,19 @@
         </div>
     </nav>
 
-    <!-- container will house both searches and intro carousel -->
-
     <div class="container" id="introBox">
-        <!-- intro carousel goes here -->
-        <div class="intro">
-            <div class="carousel carousel-slider" id="topSlider">
-                <a class="carousel-item" href="#one!"><img src="https://www.fillmurray.com/800/400"></a>
-                <a class="carousel-item" href="#two!"><img src="https://www.fillmurray.com/600/400"></a>
-                <a class="carousel-item" href="#three!"><img src=" https://www.fillmurray.com/400/400"></a>
-                <a class="carousel-item" href="#four!"><img src=" https://www.fillmurray.com/800/800"></a>
+        <div class="row"></div>
+        <div class="row">
+            <div class="col s6">
+                <img class="materialboxed responsive-img"src="assets/images/zestopOne.jpg">
+            </div><div class="cols6">
+                <img class="materialboxed responsive-img"src="assets/images/zestopTwo.jpg">
+                <!-- <div class="carousel carousel-slider"style="height:200px; width:auto"id="topSlider">
+                    <a class="carousel-item container-fluid" href="#one!"><img class="responsive-img"src="assets/images/zestopThree.jpg"></a>
+                    <a class="carousel-item container-fluid" href="#two!"><img class="responsive-img"src="assets/images/zestopFour.jpg"></a>
+                </div> -->
             </div>
+
         </div>
     </div>
     <div class="container" id="searches">
@@ -41,77 +43,97 @@
             <div class="col s10">
                 <!-- food search/img/instructions -->
                 <form id="foodSearch">
-                    <input type="text" placeholder="Search for Zesty Foods" id="userFoodInput">
+                    <input class="green lighten-3 deep-orange-text text-darken-3" type="text" placeholder="Search for Zesty Foods" id="userFoodInput">
                     <div class="card-panel hoverable" id="foodCard">
                         <div class="row">
+                            <div class="col s5"></div>
+                            <div class="col s5">
+                                <h5 id="foodTitle"></h4>
+                            </div>
+                            <div class="col s2">
+                                <a class="btn-floating btn-large waves-effect waves-light green lighten-2"><i class="material-icons">Z</i></a>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col s1">
-                                <h3 id="foodTitle"></h3>
-
-
+                                
+                            </div>
+                            <div class="col s2 pull-s1">
+                                <ul id="ingrediantsList" class="right-align"></ul>
+                            </div>
+                            <div class="col s2 pull-s1">
+                                <ul id="measurementsList" class="left-align"></ul>
                             </div>
                             <div class="col s6">
-                                <ul id="measurementsList" class="left-align"></ul>
-                                <ul id="ingrediantsList" class="left-align"></ul>
-                            </div>
-                            <div class="col s4">
-                                <img class="materialboxed right-align" id="imageFood" src="" alt="" height="300px"
+                                <img class="materialboxed responsive-img right-align" id="imageFood" src="" alt="" height="300px"
                                     width="300px">
                             </div>
-                            <div class="col s1">
-
+                            <div class="col s1 pull-s1">
+                                
                             </div>
                         </div>
                         <p id="recipe"> </p>
                     </div>
                 </form>
+                <div class="row"></div>
                 <!-- alcohol search/img/instructions -->
                 <form id="alchiSearch">
-                    <input type="text" placeholder="Search for Zesty Drinks" id="userDrinkInput">
+                    <input class="green lighten-3 deep-orange-text text-darken-3"type="text" placeholder="Search for Zesty Drinks" id="userDrinkInput">
                     <div class="card-panel hoverable" id="alchiCard">
                         <div class="row">
-                            <div class="col s1">
-                                <h3 id="drinkTitle"></h3>
-
+                            <div class="col s5"></div>
+                            <div class="col s5">
+                                <h5 id="drinkTitle"></h5>
                             </div>
-                            <div class="col s6">
-                                <img class="materialboxed right-align" id="imageDrink" src="" alt="" height="300px"
-                                    width="300px">
-                            </div>
-                            <div class="col s4">
-                                <ul id="measurementsDrink"></ul>
-                                <ul id="ingrediantsDrink"></ul>
-                            </div>
-                            <div class="col s1">
-
+                            <div class="col s2">
+                                <a class="btn-floating btn-large waves-effect waves-light green lighten-2"><i class="material-icons">Z</i></a>
                             </div>
                         </div>
-                        <p id="drinkRecipe"></p>
+                        <div class="row">
+                            <div class="col s1"></div>
+                            <div class="col s2 pull-s1">
+                                <ul id="ingrediantsDrink" class="right-align"></ul>
+                            </div>
+                            <div class="col s2 pull-s1">
+                                <ul id="measurementsDrink" class="left-align"></ul>
+                            </div>
+                            <div class="col s3">
+                                <p id="drinkRecipe"></p>
+                            </div>
+                            <div class="col s3">
+                                <img class="materialboxed responsive-img right-align" id="imageDrink" src="" alt="" height="300px"
+                                    width="300px">
+                            </div>
+                            <div class="col s1"></div>
+                        </div> 
                     </div>
                 </form>
             </div>
             <div class="col s2">
-                <div class="adSpace">
-                    <img src="assets/images/advertasideplaceholder.jpg">
+                <div class="row"></div>
+                <div class="row">
+                    <img class="responsive-img"src="assets/images/advertasideplaceholder.jpg">
+                </div>
+                <!-- <div>
+                    <img class="responsive-img"src="assets/images/advertasideplaceholder.jpg">
+                </div> -->
                 </div>
             </div>
         </div>
-
     </div>
-
     <!-- zestimonials carousel -->
     <div class="container" id="zestyReviews">
         <div class="row">
             <div class="col s12">
-                <div class="carousel carousel-slider" id="zestimonialSlider">
-                    <a class="carousel-item" href="#one!"><img src="http://placekitten.com/200/300"></a>
-                    <a class="carousel-item" href="#two!"><img src="http://placekitten.com/200/300"></a>
-                    <a class="carousel-item" href="#three!"><img src="http://placekitten.com/200/300"></a>
-                    <a class="carousel-item" href="#four!"><img src="http://placekitten.com/200/300>"></a>
+                 <div class="carousel carousel-slider" style="height:400px; width:auto"id="zestimonialSlider">
+                    <a class="carousel-item container-fluid"  href="#one!"><img class="responsive-img"src="assets/images/zestiOne.jpg"></a>
+                    <a class="carousel-item container-fluid"  href="#two!"><img class="responsive-img"src="assets/images/zestiTwo.jpg"></a>
+                    <a class="carousel-item container-fluid"  href="#three!"><img class="responsive-img"src="assets/images/zestiThree.jpg"></a>
+                    <a class="carousel-item container-fluid"  href="#four!"><img class="responsive-img"src="assets/images/zestiFour.jpg"></a>
                 </div>
             </div>
         </div>
     </div>
-
     <footer class="page-footer light-green lighten-2">
         <div class="container">
             <div class="row">
@@ -123,7 +145,7 @@
                     <h5 class="white-text">Links</h5>
                     <ul>
                         <li><a class="grey-text text-lighten-3" href="index.html">Home</a></li>
-                        <li><a class="grey-text text-lighten-3" href="zestimonials.html">Zestimonials</a></li>
+                        <li><a class="grey-text text-lighten-3" href="zestipes.html">Zestipes</a></li>
                         <li><a class="grey-text text-lighten-3" href="zestme.html">Zest Me!</a></li>
                         <li><a class="grey-text text-lighten-3" href="taco.html">Z E S T A C O</a></li>
                     </ul>
