@@ -239,36 +239,40 @@ function getalcohol() {
 }
 // creates cards for zestipies page
 function createcards() {
-  for (let i = 0; i < userSavedFood.length; i++);
-  var card = $("<card>");
-  var cardimg = $("<img>");
-  var header = $("<h5>");
+  for (let i = 0; i < foodFave.length; i++) {
+    var loop = foodFave[i];
+    var card = $("<card>");
+    var cardimg = $("<img>");
+    var header = $("<h5>");
 
-  cardimg.attr("height", "200px");
-  cardimg.attr("width", "200px");
-  header.text(foodFave[0].title);
-  cardimg.attr("src", foodFave[0].img);
+    cardimg.attr("height", "200px");
+    cardimg.attr("width", "200px");
+    header.text(loop.title);
+    cardimg.attr("src", loop.img);
 
-  card.prepend(cardimg);
-  card.append(header);
+    card.prepend(cardimg);
+    card.append(header);
 
-  $("#zestyFavs").append(card);
+    $("#food").append(card);
+  }
 }
 function createcardsdrink() {
-  for (let i = 0; i < userSavedDrink.length; i++);
-  var cardDrink = $("<card>");
-  var cardimgDrink = $("<img>");
-  var headerDrink = $("<h5>");
+  for (let i = 0; i < drinkFave.length; i++) {
+    var drinkloop = drinkFave[i];
+    var cardDrink = $("<card>");
+    var cardimgDrink = $("<img>");
+    var headerDrink = $("<h5>");
 
-  cardimgDrink.attr("height", "200px");
-  cardimgDrink.attr("width", "200px");
-  headerDrink.text(drinkFave[0].drink);
-  cardimgDrink.attr("src", drinkFave[0].drinkimg);
+    cardimgDrink.attr("height", "200px");
+    cardimgDrink.attr("width", "200px");
+    headerDrink.text(drinkloop.drink);
+    cardimgDrink.attr("src", drinkloop.drinkimg);
 
-  cardDrink.prepend(cardimgDrink);
-  cardDrink.append(headerDrink);
+    cardDrink.prepend(cardimgDrink);
+    cardDrink.append(headerDrink);
 
-  $("#zestyFavs").append(cardDrink);
+    $("#drink").append(cardDrink);
+  }
 }
 
 // this takes the users search term and triggers the search on a submit (food)
