@@ -16,29 +16,41 @@
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li><a href="index.html">Home</a></li>
         <li><a href="zestipes.html">My Zestipes</a></li>
-        <li class="active" id="zestMe"><a href="zestme.html">Zest Me!</a></li>
+        <li class="active" id="zestMe"><a href="index.html">Zest Me!</a></li>
       </ul>
     </div>
   </nav>
   <div class="container" id="favRecipeSearch">
-    <form id="foodSearch">
-      <!-- <input type="text" placeholder="Search My Zestpies"id="userFoodInput"> -->
-      <div class="card-panel hoverable" id="foodCard">
-        <div class="row">
-          <div class="col s1"></div>
-          <h3 id="foodTitle"></h3>
-          <div class="col s4">
-            <ul id="measurementsList" class="left-align"></ul>
-            <ul id="ingrediantsList" class="left-align"></ul>
-          </div>
-          <div class="col s6">
-            <img class="materialboxed right-align" id="imageFood" src="" alt="" height="200px" width="200px">
-          </div>
-          <div class="col s1"></div>
+
+    <div class="card-panel hoverable" id="foodCard">
+      <div class="row">
+        <div class="col s4"></div>
+        <div class="col s4">
+          <h5 id="foodTitle">
+          </h5>
         </div>
-        <p id="recipe"> </p>
+        <div class="col s4"></div>
       </div>
-    </form>
+      <div class="row">
+        <div class="col s1">
+
+        </div>
+        <div class="col s2 pull-s1">
+          <ul id="ingrediantsList" class="right-align"></ul>
+        </div>
+        <div class="col s2 pull-s1">
+          <ul id="measurementsList" class="left-align"></ul>
+        </div>
+        <div class="col s6 push-s2">
+          <img class="materialboxed right-align" id="imageFood" src="" alt="" height="300px" width="300px">
+        </div>
+        <div class="col s1">
+          <a class="btn-floating btn-large waves-effect waves-light green lighten-2"><i id="likeButtonFood"
+              class="material-icons">Z</i></a>
+        </div>
+      </div>
+      <p id="recipe"> </p>
+    </div>
   </div>
   <footer class="page-footer light-green lighten-2">
     <div class="container">
